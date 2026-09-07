@@ -3,9 +3,9 @@ name: CI
 on:
   push:
     branches: [main, dev]
-    paths: ['src/skills/**', 'scripts/package-skill.sh', '.github/workflows/ci.yml']
+    paths: ['src/skills/**', 'scripts/package-skill.*', '.github/workflows/ci.yml']
   pull_request:
-    paths: ['src/skills/**', 'scripts/package-skill.sh', '.github/workflows/ci.yml']
+    paths: ['src/skills/**', 'scripts/package-skill.*', '.github/workflows/ci.yml']
 
 permissions:
   contents: read
@@ -32,10 +32,9 @@ jobs:
       - name: Validate structure
         run: |
           DIR=src/skills/software-development
-          test -d "$DIR/references" || { echo "::error::references/ missing"; exit 1; }
-          find "$DIR/references" -name '*.md' | grep -q . \
-            || { echo "::error::no reference markdown found"; exit 1; }
-          echo "structure OK"
+          test "$(find "$DIR" -mindepth 1 -print)" = "$DIR/SKILL.md" \
+            || { echo "::error::skill must contain only SKILL.md"; exit 1; }
+          echo "single-file structure OK"
 
       - name: Package smoke test
         run: bash scripts/package-skill.sh
