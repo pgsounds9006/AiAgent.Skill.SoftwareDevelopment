@@ -12,7 +12,7 @@ documented skill location. The complete installed package is the
 `software-development` directory containing that single file.
 
 Use `skills/software-development/` from this repository, or unpack the
-[release archive](https://github.com/pgsounds9006/AiAgent.Framework.SDD/releases/latest/download/software-development.skill).
+[release archive](https://github.com/pgsounds9006/AiAgent.Skill.SoftwareDevelopment/releases/latest/download/software-development.skill).
 The latest-release address changes with new releases; use a specific release
 or commit when a reproducible source matters. The release version is in the
 skill's frontmatter.

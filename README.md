@@ -1,4 +1,4 @@
-# AiAgent.Framework.SDD
+# AiAgent.Skill.SoftwareDevelopment
 
 `software-development` is an agent skill for deciding what to explore,
 what to make dependable, and what to simplify in software engineering.
@@ -42,12 +42,12 @@ Ask an agent:
 
 ```text
 Read and proceed:
-https://github.com/pgsounds9006/AiAgent.Framework.SDD/blob/main/src/INSTALL-SKILL.md
+https://github.com/pgsounds9006/AiAgent.Skill.SoftwareDevelopment/blob/main/src/INSTALL-SKILL.md
 ```
 
 For an environment with native skill support, place the
 `src/skills/software-development/` directory in its skill search path.
-The [release archive](https://github.com/pgsounds9006/AiAgent.Framework.SDD/releases/latest/download/software-development.skill)
+The [release archive](https://github.com/pgsounds9006/AiAgent.Skill.SoftwareDevelopment/releases/latest/download/software-development.skill)
 contains the same folder with a single `SKILL.md`.
 
 Installation, invocation, and usefulness are separate things to check.
