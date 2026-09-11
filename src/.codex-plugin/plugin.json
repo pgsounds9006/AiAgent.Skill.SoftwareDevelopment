@@ -1,0 +1,17 @@
+{
+  "name": "software-development",
+  "version": "0.2.0",
+  "description": "Evidence-guided software engineering for implementation, debugging, and refactoring.",
+  "author": { "name": "pgsounds9006" },
+  "repository": "https://github.com/pgsounds9006/AiAgent.Skill.SoftwareDevelopment",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Software Development",
+    "shortDescription": "Evidence-guided software engineering.",
+    "longDescription": "Apply the software-development skill to implementation, debugging, and refactoring.",
+    "developerName": "pgsounds9006",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Apply the software-development skill to this project."
+  }
+}

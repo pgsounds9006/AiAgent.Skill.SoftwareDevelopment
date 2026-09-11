@@ -3,9 +3,9 @@ name: CI
 on:
   push:
     branches: [main, dev]
-    paths: ['src/skills/**', 'scripts/package-skill.*', '.github/workflows/ci.yml']
+    paths: ['src/skills/**', 'src/.codex-plugin/**', 'scripts/check-plugin.py', 'scripts/package-skill.*', '.github/workflows/ci.yml']
   pull_request:
-    paths: ['src/skills/**', 'scripts/package-skill.*', '.github/workflows/ci.yml']
+    paths: ['src/skills/**', 'src/.codex-plugin/**', 'scripts/check-plugin.py', 'scripts/package-skill.*', '.github/workflows/ci.yml']
 
 permissions:
   contents: read
@@ -35,6 +35,9 @@ jobs:
           test "$(find "$DIR" -mindepth 1 -print)" = "$DIR/SKILL.md" \
             || { echo "::error::skill must contain only SKILL.md"; exit 1; }
           echo "single-file structure OK"
+
+      - name: Validate plugin source and version
+        run: python scripts/check-plugin.py
 
       - name: Package smoke test
         run: bash scripts/package-skill.sh

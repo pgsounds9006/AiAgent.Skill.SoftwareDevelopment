@@ -56,6 +56,32 @@ check invocation when needed; evaluate usefulness through relevant work.
 Add an environment-specific pointer only to address an identified integration
 gap. Repeating the skill in other settings creates another copy to maintain.
 
+## Codex plugin
+
+The `src/` directory is also a Codex plugin. Its `.codex-plugin/plugin.json`
+points to `skills/`, so both installations use the same source file.
+
+A Codex marketplace can reference this repository with this entry:
+
+```json
+{
+  "name": "software-development",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/pgsounds9006/AiAgent.Skill.SoftwareDevelopment.git",
+    "path": "./src",
+    "ref": "main"
+  },
+  "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+  "category": "Productivity"
+}
+```
+
+Install from the marketplace that lists it, then start a new Codex task
+to use `software-development:software-development`.
+When releasing a new skill version, update `src/.codex-plugin/plugin.json`
+to match the version in `SKILL.md`. CI checks this agreement.
+
 ## Remove
 
 Remove the installed `software-development` folder and any pointer added
